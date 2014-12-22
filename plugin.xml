@@ -1,0 +1,20 @@
+<?xml version='1.0' encoding='utf-8'?>
+<plugin id="com.surem.cordova.skypeakerphone" version="1" xmlns="http://apache.org/cordova/ns/plugins/1.0"
+        xmlns:android="http://schemas.android.com/apk/res/android">
+    <name>skypeakerphone</name>
+    <js-module name="skypeakerphone" src="www/skypeakerphone.js">
+        <clobbers target="cordova.plugins.skypeakerphone"/>
+    </js-module>
+    <platform name="android">
+        <config-file parent="/*" target="res/xml/config.xml">
+            <feature name="skypeakerphone">
+                <param name="android-package" value="com.surem.cordova.skypeakerphone.skypeakerphone"/>
+            </feature>
+        </config-file>
+        <config-file parent="/*" target="AndroidManifest.xml">
+            <uses-permission android:name="android.permission.MODIFY_AUDIO_SETTINGS"/>
+        </config-file>
+        <source-file src="src/android/skypeakerphone.java"
+                     target-dir="src/com/surem/cordova/skypeakerphone/skypeakerphone"/>
+    </platform>
+</plugin>
