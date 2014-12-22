@@ -30,7 +30,7 @@ public class skypeakerphone extends CordovaPlugin {
 
         audioManager.setStreamVolume(AudioManager.STREAM_VOICE_CALL, 5, 0);
         audioManager.setSpeakerphoneOn(true);
-        andorid.util.Log.d("skypeakerphone", "[skypeakerphone] turn_up()");
+        andrpid.util.Log.d("skypeakerphone", "[skypeakerphone] turn_up()");
 
         callbackContext.success();
     }
@@ -40,7 +40,7 @@ public class skypeakerphone extends CordovaPlugin {
 
         audioManager.setStreamVolume(AudioManager.STREAM_VOICE_CALL, 1, 0);
         audioManager.setSpeakerphoneOn(false);
-        andorid.util.Log.d("skypeakerphone", "[skypeakerphone] turn_down()");
+        andrpid.util.Log.d("skypeakerphone", "[skypeakerphone] turn_down()");
 
         callbackContext.success();
     }
