@@ -25,20 +25,22 @@ public class skypeakerphone extends CordovaPlugin {
         return false;
     }
 
-    private void turn_up(String message, CallbackContext callbackContext) {
+    private void turn_up(CallbackContext callbackContext) {
         AudioManager audioManager = (AudioManager) cordova.getActivity().getApplicationContext().getSystemService(Service.AUDIO_SERVICE);
 
-        audioManager.setStreamVolume(AudioManager.STREAM_VOICE_CALL, 5, flags);
+        audioManager.setStreamVolume(AudioManager.STREAM_VOICE_CALL, 5, 0);
         audioManager.setSpeakerphoneOn(true);
+        andorid.util.Log.d("skypeakerphone", "[skypeakerphone] turn_up()");
 
         callbackContext.success(message);
     }
 
-    private void turn_down(String message, CallbackContext callbackContext) {
+    private void turn_down(CallbackContext callbackContext) {
         AudioManager audioManager = (AudioManager) cordova.getActivity().getApplicationContext().getSystemService(Service.AUDIO_SERVICE);
 
-        audioManager.setStreamVolume(AudioManager.STREAM_VOICE_CALL, 1, flags);
+        audioManager.setStreamVolume(AudioManager.STREAM_VOICE_CALL, 1, 0);
         audioManager.setSpeakerphoneOn(false);
+        andorid.util.Log.d("skypeakerphone", "[skypeakerphone] turn_down()");
 
         callbackContext.success(message);
     }
